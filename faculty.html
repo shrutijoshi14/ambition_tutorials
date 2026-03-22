@@ -1,133 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Faculty - Ambition Tutorials</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="d-flex flex-column min-vh-100">
+        <div id="header-placeholder"></div>
 
-    <div id="header-placeholder"></div>
+        <main class="flex-grow-1">
+            <section class="py-5 bg-light min-vh-100">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h1 class="fw-bold text-navy">Meet Our Expert Faculty</h1>
+                        <p class="text-muted">Highly qualified educators dedicated to your success.</p>
+                        <div class="mx-auto bg-gold" style="width: 80px; height: 4px;"></div>
+                    </div>
 
-    <main class="pt-5 mt-5">
-        <section class="py-5 bg-navy text-white text-center">
-            <div class="container">
-                <h1 class="display-4 fw-bold mb-3" data-aos="fade-up">Our Expert Faculty</h1>
-                <p class="lead opacity-75" data-aos="fade-up" data-aos-delay="100">Mentors dedicated to shaping the next generation of leaders.</p>
-            </div>
-        </section>
+                    <div class="row g-4" id="faculty-container">
+                        <!-- Faculty cards will be injected here via JS -->
+                    </div>
 
-        <section class="py-5">
-            <div class="container container-custom">
-                <div class="row g-4">
-                    <!-- Faculty Card 1 -->
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up">
-                        <div class="premium-card text-center p-4">
-                            <div class="topper-image-wrapper mb-4">
-                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop" alt="Prof. Rahul Sharma" class="topper-img">
-                            </div>
-                            <h4 class="text-navy fw-bold mb-1">Prof. Rahul Sharma</h4>
-                            <p class="text-maroon fw-bold mb-3">Mathematics Specialist</p>
-                            <p class="text-muted small mb-4">M.Sc., B.Ed. with over 12 years of experience in simplifying complex calculus and algebra for board exams.</p>
-                            <div class="bg-light p-2 rounded-pill d-inline-block px-4">
-                                <span class="fw-bold text-navy">12+ Years Exp.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Faculty Card 2 -->
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="premium-card text-center p-4">
-                            <div class="topper-image-wrapper mb-4">
-                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop" alt="Dr. Sunita Deshmukh" class="topper-img">
-                            </div>
-                            <h4 class="text-navy fw-bold mb-1">Dr. Sunita Deshmukh</h4>
-                            <p class="text-maroon fw-bold mb-3">Physics Expert</p>
-                            <p class="text-muted small mb-4">Ph.D. in Physics. Specialized in competitive exam preparation like JEE and NEET with a focus on conceptual clarity.</p>
-                            <div class="bg-light p-2 rounded-pill d-inline-block px-4">
-                                <span class="fw-bold text-navy">15+ Years Exp.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Faculty Card 3 -->
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="premium-card text-center p-4">
-                            <div class="topper-image-wrapper mb-4">
-                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop" alt="Prof. Amit Patel" class="topper-img">
-                            </div>
-                            <h4 class="text-navy fw-bold mb-1">Prof. Amit Patel</h4>
-                            <p class="text-maroon fw-bold mb-3">Accountancy HOD</p>
-                            <p class="text-muted small mb-4">Chartered Accountant (CA). Leads the commerce department with real-world insights into accounting and taxation.</p>
-                            <div class="bg-light p-2 rounded-pill d-inline-block px-4">
-                                <span class="fw-bold text-navy">10+ Years Exp.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Faculty Card 4 -->
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="premium-card text-center p-4">
-                            <div class="topper-image-wrapper mb-4">
-                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop" alt="Ms. Priya Kulkarni" class="topper-img">
-                            </div>
-                            <h4 class="text-navy fw-bold mb-1">Ms. Priya Kulkarni</h4>
-                            <p class="text-maroon fw-bold mb-3">English & Social Studies</p>
-                            <p class="text-muted small mb-4">M.A. English, B.Ed. Expert in language skills and humanities for Class 8th to 10th students.</p>
-                            <div class="bg-light p-2 rounded-pill d-inline-block px-4">
-                                <span class="fw-bold text-navy">8+ Years Exp.</span>
-                            </div>
-                        </div>
+                    <div class="text-center mt-5 pt-4">
+                        <h3 class="fw-bold text-navy mb-3">Want to Learn from the Experts?</h3>
+                        <a href="enquiry.html" class="btn btn-premium btn-lg">Book a Free Demo Class</a>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Stats Section -->
-        <section class="py-5 bg-navy text-white mt-5">
-            <div class="container">
-                <div class="row text-center g-4">
-                    <div class="col-md-3">
-                        <h2 class="display-4 fw-bold text-gold">25+</h2>
-                        <p class="opacity-75">Expert Mentors</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h2 class="display-4 fw-bold text-gold">10+</h2>
-                        <p class="opacity-75">Years Experience</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h2 class="display-4 fw-bold text-gold">5000+</h2>
-                        <p class="opacity-75">Students Mentored</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h2 class="display-4 fw-bold text-gold">98%</h2>
-                        <p class="opacity-75">Success Rate</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <div id="footer-placeholder"></div>
+            </section>
+        </main>
+        
+        <div id="footer-placeholder"></div>
+    </div>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/nav-footer.js"></script>
+    <script src="js/main.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
+      AOS.init({ duration: 1000, once: true });
+
+      document.addEventListener('DOMContentLoaded', async () => {
+          const container = document.getElementById('faculty-container');
+          // Reverted to more casual, natural-looking demo placeholder images as requested
+          const faculty = [
+              { name: "Sumit Sir", qualification: "B.Sc, MCA", experience: "7+ Years", subject_expertise: "Maths", image_url: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=400" },
+              { name: "Sagar Sir", qualification: "Diploma, BE in Electronical (Polytechnic)", experience: "10+ Years", subject_expertise: "Maths", image_url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400" }
+          ];
+
+          if (faculty.length > 0) {
+              faculty.forEach((member, index) => {
+                  const col = document.createElement('div');
+                  col.className = 'col-lg-4 col-md-6';
+                  col.innerHTML = `
+                      <div>
+                          <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 premium-card">
+                              <div class="position-relative">
+                                  <img class="card-img-top" src="${member.image_url}" style="height: 350px; object-fit: cover;" alt="${member.name}" onerror="this.src='assets/logo.jpeg'" />
+                                  <!-- Replaced bg-navy with a custom gradient to fix hover invisibility issues and increase elegance -->
+                                  <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(to top, var(--primary-navy), transparent); z-index: 10;">
+                                      <h4 class="fw-bold mb-0 text-white" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">${member.name}</h4>
+                                      <small class="fw-bold text-white mb-2 d-block" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">${member.qualification}</small>
+                                  </div>
+                              </div>
+                              <div class="card-body p-4 bg-white position-relative" style="z-index: 10;">
+                                  <div class="d-flex align-items-center mb-3 gap-2">
+                                      <i data-lucide="award" class="text-maroon" width="18"></i>
+                                      <span><strong>Expertise:</strong> ${member.subject_expertise}</span>
+                                  </div>
+                                  <div class="d-flex align-items-center mb-0 gap-2">
+                                      <i data-lucide="clock" class="text-maroon" width="18"></i>
+                                      <span><strong>Experience:</strong> ${member.experience}</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  `;
+                  container.appendChild(col);
+              });
+              if (typeof lucide !== 'undefined') {
+                  lucide.createIcons();
+              }
+          } else {
+              container.innerHTML = `
+                  <div class="col-12 text-center py-5 w-100">
+                      <h5 class="text-muted">Faculty information is currently being updated.</h5>
+                  </div>
+              `;
+          }
+      });
     </script>
-</body>
+  </body>
 </html>

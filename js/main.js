@@ -13,41 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Custom ScrollSpy for exact Active Link Tracking
-    const sections = document.querySelectorAll('section[id], header[id]'); // target sections and hero
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-
-    const updateActiveLink = () => {
-        let currentSectionId = '';
-        const scrollPosition = window.scrollY + 100; // offset for the fixed navbar
-
-        // Find the section currently in view
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                currentSectionId = section.getAttribute('id');
-            }
-        });
-
-        // Special case for top of page (hero section)
-        if (window.scrollY < 50) {
-            currentSectionId = 'home';
-        }
-
-        // Apply active class to corresponding nav link
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            // Check if the link's href matches the current section ID
-            if (link.getAttribute('href') === `#${currentSectionId}`) {
-                link.classList.add('active');
-            }
-        });
-    };
-
-    // Attach scroll event listener and call once on load
-    window.addEventListener('scroll', updateActiveLink);
-    updateActiveLink();
+    // 2. Custom ScrollSpy removed as it conflicted with multi-page navigation
 
     // 3. Navbar Shrink / Glassmorphism strictly on scroll
     const navbar = document.getElementById('mainNav');
@@ -138,6 +104,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
+    });
+
+    // Review Read More / Read Less smooth transition logic
+    document.querySelectorAll('.review-wrapper').forEach(wrapper => {
+        const textElement = wrapper.querySelector('.review-text');
+        if (!textElement) return;
+        
+        const fullText = textElement.innerHTML;
+        const limit = 120; // character limit
+
+        if (fullText.length > limit) {
+            // CSS setup for smooth expansion
+            textElement.style.display = '-webkit-box';
+            textElement.style.webkitLineClamp = '3';
+            textElement.style.webkitBoxOrient = 'vertical';
+            textElement.style.overflow = 'hidden';
+            textElement.style.transition = 'max-height 0.6s ease-in-out';
+            textElement.style.maxHeight = '85px'; // Approximate 3-line height based on 1.7 line height
+
+            const toggleBtn = document.createElement('button');
+            toggleBtn.className = 'btn btn-link p-0 text-navy fw-bold text-decoration-none mt-2 d-inline-block read-more-btn';
+            toggleBtn.style.fontSize = '0.9rem';
+            toggleBtn.style.transition = 'color 0.3s ease';
+            toggleBtn.innerText = 'Read More';
+            wrapper.appendChild(toggleBtn);
+
+            let isExpanded = false;
+            toggleBtn.addEventListener('click', () => {
+                isExpanded = !isExpanded;
+                if (isExpanded) {
+                    textElement.style.webkitLineClamp = 'unset';
+                    textElement.style.maxHeight = textElement.scrollHeight + 'px';
+                } else {
+                    textElement.style.maxHeight = '85px';
+                    // Delay restoring line-clamp to allow height transition to finish smoothly
+                    setTimeout(() => {
+                        if (!isExpanded) textElement.style.webkitLineClamp = '3';
+                    }, 500);
+                }
+                toggleBtn.innerText = isExpanded ? 'Read Less' : 'Read More';
+            });
+        }
     });
 });
 

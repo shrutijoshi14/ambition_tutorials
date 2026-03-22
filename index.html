@@ -8,357 +8,263 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <!-- Bootstrap CSS -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
-    />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
   <body>
-    <div id="header-placeholder"></div>
+    <div class="d-flex flex-column min-vh-100">
+        <div id="header-placeholder"></div>
 
-    <main>
-      <!-- Hero Section -->
-      <section
-        class="hero-section bg-navy text-white py-5 position-relative overflow-hidden"
-        style="
-          min-height: 85vh;
-          display: flex;
-          align-items: center;
-          background: linear-gradient(135deg, #1a2b4c 0%, #101a30 100%);
-        "
-      >
-        <div
-          class="position-absolute top-0 start-0 w-100 h-100 opacity-10"
-          style="background: radial-gradient(circle at 50% 50%, #ffd700 0%, transparent 60%)"
-        ></div>
-        <div class="container container-custom">
-          <div class="row align-items-center position-relative z-2">
-            <div class="col-lg-6" data-aos="fade-right">
-              <h1 class="display-2 fw-bold mb-4 line-height-1">
-                Unlock Your <br />
-                <span class="text-gold">Academic Potential</span>
-              </h1>
-              <p class="lead mb-5 opacity-75 fw-light" style="font-size: 1.25rem">
-                Mumbai's premier coaching institute for
-                <span class="text-gold fw-normal">School, Science, and Commerce</span>. Expert
-                faculty, institutional excellence, and a decade of success.
-              </p>
-              <div class="d-flex flex-wrap gap-4">
-                <a href="enquiry.html" class="btn-premium btn-lg px-5">Enroll Now</a>
-                <a href="#features" class="btn btn-outline-light rounded-pill px-5 btn-lg"
-                  >Learn More</a
-                >
-              </div>
-            </div>
-            <div class="col-lg-6 d-none d-lg-block" data-aos="zoom-in">
-              <div class="text-center">
-                <img
-                  src="assets/ambition_logo.png"
-                  alt="Ambition logo"
-                  class="img-fluid mb-5"
-                  style="max-width: 320px; filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.15))"
-                />
-                <div class="mt-2">
-                  <h2
-                    class="fw-normal tracking-widest text-white py-3 d-inline-block px-5 bg-navy border border-gold rounded-pill"
-                    style="letter-spacing: 0.2rem; font-size: 1.5rem"
-                  >
-                    SCHOOL <span class="text-gold mx-3">|</span> COMMERCE
-                  </h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        <main class="flex-grow-1">
+          <div class="home-page">
+              <!-- Hero Section -->
+              <section class="hero-section bg-navy text-white py-5 position-relative overflow-hidden" style="min-height: 85vh; display: flex; align-items: center; background: linear-gradient(135deg, #1a2b4c 0%, #101a30 100%)">
+                  <div class="position-absolute top-0 start-0 w-100 h-100 opacity-10" style="background: radial-gradient(circle at 50% 50%, #ffd700 0%, transparent 60%)"></div>
+                  <div class="container">
+                      <div class="row align-items-center position-relative z-2">
+                          <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                              <h1 class="display-2 fw-bold mb-4 line-height-1">
+                                  Unlock Your <br />
+                                  <span class="text-gold">Academic Potential</span>
+                              </h1>
+                              <p class="lead mb-5 opacity-75 fw-light" style="font-size: 1.25rem">
+                                  Pune's premier coaching institute for <span class="text-gold fw-normal">School and Commerce</span>. 
+                                  Expert faculty, institutional excellence, and a decade of success.
+                              </p>
+                              <div class="d-flex gap-4">
+                                  <a href="enquiry.html" class="btn btn-premium btn-lg px-5">Enroll Now</a>
+                                  <a href="#features" class="btn btn-outline-light rounded-pill px-5 btn-lg">Learn More</a>
+                              </div>
+                          </div>
+                          <div class="col-lg-6 d-none d-lg-block">
+                              <div class="text-center" data-aos="zoom-in" data-aos-duration="1200">
+                                  <img src="assets/logo.png" alt="Ambition logo" class="img-fluid mb-5 rounded-circle" style="max-width: 320px; aspect-ratio: 1/1; object-fit: cover; filter: drop-shadow(0 0 30px rgba(255,215,0,0.15))" onerror="this.src='assets/ambition_logo.png'" />
+                                  <div class="mt-2">
+                                      <h2 class="fw-normal tracking-widest text-white py-3 d-inline-block px-5 bg-navy border border-gold rounded-pill" style="letter-spacing: 0.2rem; font-size: 1.5rem">
+                                          SCHOOL <span class="text-gold mx-3">|</span> COMMERCE
+                                      </h2>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </section>
 
-      <!-- About Section -->
-      <section class="py-5 bg-white overflow-hidden">
-        <div class="container container-custom">
-          <div class="row align-items-center">
-            <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
-              <img
-                src="assets/WhatsApp Image 2026-03-16 at 4.25.12 PM.jpeg"
-                alt="Institute"
-                class="img-fluid rounded-4 shadow-lg border-top border-gold border-4"
-              />
-            </div>
-            <div class="col-lg-7 ps-lg-5" data-aos="fade-left">
-              <h2 class="display-5 fw-bold text-navy mb-4 mt-4 mt-lg-0 section-title text-start">
-                Legacy of Excellence
-              </h2>
-              <p class="text-muted mb-4" style="font-size: 1.1rem; line-height: 1.8">
-                Ambition Tutorials has been a beacon of academic success in mumbai for over a
-                decade. We specialize in
-                <span class="text-navy fw-bold"
-                  >School (5th-10th), Science (11th-12th), and Commerce</span
-                >
-                streams, providing a nurturing environment where every student's ambition finds
-                wings.
-              </p>
-              <div class="row mt-4 g-3">
-                <div class="col-sm-6">
-                  <div class="d-flex align-items-center gap-2">
-                    <i class="fas fa-check-circle text-gold"></i>
-                    <span class="fw-bold text-navy">Personalized Attention</span>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="d-flex align-items-center gap-2">
-                    <i class="fas fa-check-circle text-gold"></i>
-                    <span class="fw-bold text-navy">Modern Infrastructure</span>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="d-flex align-items-center gap-2">
-                    <i class="fas fa-check-circle text-gold"></i>
-                    <span class="fw-bold text-navy">Expert Guidance</span>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="d-flex align-items-center gap-2">
-                    <i class="fas fa-check-circle text-gold"></i>
-                    <span class="fw-bold text-navy">Success Track Record</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Features Section -->
-      <section id="features" class="py-5 bg-light">
-        <div class="container container-custom">
-          <div class="text-center mb-5" data-aos="fade-up">
-            <h2 class="display-5 fw-bold text-navy section-title">Why Choose Ambition?</h2>
-          </div>
-          <div class="row g-4">
-            <!-- Feature 1 -->
-            <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-              <div class="p-4 text-center premium-card shadow-sm rounded-4">
-                <div class="text-maroon mb-4 d-inline-block p-4 rounded-circle bg-white shadow-sm">
-                  <i class="fas fa-graduation-cap fa-2x"></i>
-                </div>
-                <h4 class="fw-bold text-navy mb-3">Expert Faculty</h4>
-                <p class="text-muted small mb-0 px-2">
-                  Learn from highly qualified and experienced teachers.
-                </p>
-              </div>
-            </div>
-            <!-- Feature 2 -->
-            <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
-              <div class="p-4 text-center premium-card shadow-sm rounded-4">
-                <div class="text-maroon mb-4 d-inline-block p-4 rounded-circle bg-white shadow-sm">
-                  <i class="fas fa-users fa-2x"></i>
-                </div>
-                <h4 class="fw-bold text-navy mb-3">Small Batches</h4>
-                <p class="text-muted small mb-0 px-2">
-                  Personalized attention for every student in focused groups.
-                </p>
-              </div>
-            </div>
-            <!-- Feature 3 -->
-            <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
-              <div class="p-4 text-center premium-card shadow-sm rounded-4">
-                <div class="text-maroon mb-4 d-inline-block p-4 rounded-circle bg-white shadow-sm">
-                  <i class="fas fa-vial fa-2x"></i>
-                </div>
-                <h4 class="fw-bold text-navy mb-3">Regular Tests</h4>
-                <p class="text-muted small mb-0 px-2">
-                  Weekly performance tracking and mock exams.
-                </p>
-              </div>
-            </div>
-            <!-- Feature 4 -->
-            <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
-              <div class="p-4 text-center premium-card shadow-sm rounded-4">
-                <div class="text-maroon mb-4 d-inline-block p-4 rounded-circle bg-white shadow-sm">
-                  <i class="fas fa-trophy fa-2x"></i>
-                </div>
-                <h4 class="fw-bold text-navy mb-3">Proven Results</h4>
-                <p class="text-muted small mb-0 px-2">
-                  Consistent excellence in board and entrance exams.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Testimonials Section -->
-      <section class="py-5 bg-white">
-        <div class="container container-custom">
-          <div class="text-center mb-5" data-aos="fade-up">
-            <h2 class="display-5 fw-bold text-navy section-title">Words from Our Community</h2>
-            <p class="text-muted mt-3">
-              Real stories from students and parents who achieved their goals with us.
-            </p>
-          </div>
-          <div class="row g-4">
-            <!-- Testimonial 1 -->
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-              <div class="card border-0 shadow-sm rounded-4 h-100 p-4 premium-card">
-                <div class="text-gold mb-4 d-flex gap-1">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="fst-italic text-muted mb-4" style="font-size: 1.05rem; line-height: 1.7">
-                  "Ambition Tutorials has transformed my son's approach to learning. The teachers
-                  are incredibly patient and the focus on concepts rather than just marks is what
-                  sets them apart."
-                </p>
-                <div class="d-flex align-items-center gap-3">
-                  <div
-                    class="bg-navy text-gold p-2 rounded-circle fw-bold shadow-sm"
-                    style="
-                      width: 50px;
-                      height: 50px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      font-size: 1.2rem;
-                    "
-                  >
-                    S
+              <!-- Features Section -->
+              <section id="features" class="py-5 bg-light">
+                  <div class="container">
+                      <div class="text-center mb-5">
+                          <h2 class="display-5 fw-bold text-navy section-title">Why Choose Ambition?</h2>
+                      </div>
+                      <div class="row g-4">
+                          <div class="col-md-3">
+                              <div class="p-4 text-center premium-card h-100 shadow-sm rounded-4 border-0 hover-lift">
+                                  <div class="text-maroon mb-4 d-inline-block p-4 rounded-circle bg-white shadow-sm">
+                                      <i data-lucide="graduation-cap" width="30" height="30"></i>
+                                  </div>
+                                  <h4 class="fw-bold text-navy mb-3">Expert Faculty</h4>
+                                  <p class="text-muted small mb-0 px-2" style="line-height: 1.6">Learn from highly qualified and experienced teachers.</p>
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                              <div class="p-4 text-center premium-card h-100 shadow-sm rounded-4 border-0 hover-lift">
+                                  <div class="text-maroon mb-4 d-inline-block p-4 rounded-circle bg-white shadow-sm">
+                                      <i data-lucide="users" width="30" height="30"></i>
+                                  </div>
+                                  <h4 class="fw-bold text-navy mb-3">Small Batches</h4>
+                                  <p class="text-muted small mb-0 px-2" style="line-height: 1.6">Personalized attention for every student in focused groups.</p>
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                              <div class="p-4 text-center premium-card h-100 shadow-sm rounded-4 border-0 hover-lift">
+                                  <div class="text-maroon mb-4 d-inline-block p-4 rounded-circle bg-white shadow-sm">
+                                      <i data-lucide="check-circle" width="30" height="30"></i>
+                                  </div>
+                                  <h4 class="fw-bold text-navy mb-3">Regular Tests</h4>
+                                  <p class="text-muted small mb-0 px-2" style="line-height: 1.6">Weekly performance tracking and mock exams.</p>
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                              <div class="p-4 text-center premium-card h-100 shadow-sm rounded-4 border-0 hover-lift">
+                                  <div class="text-maroon mb-4 d-inline-block p-4 rounded-circle bg-white shadow-sm">
+                                      <i data-lucide="trophy" width="30" height="30"></i>
+                                  </div>
+                                  <h4 class="fw-bold text-navy mb-3">Proven Results</h4>
+                                  <p class="text-muted small mb-0 px-2" style="line-height: 1.6">Consistent excellence in board and entrance exams.</p>
+                              </div>
+                          </div>
+                      </div>
                   </div>
-                  <div>
-                    <h6 class="fw-bold text-navy mb-0">Suresh Raman</h6>
-                    <small class="text-maroon fw-bold opacity-75">Parent (SSC '24)</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Testimonial 2 -->
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-              <div class="card border-0 shadow-sm rounded-4 h-100 p-4 premium-card">
-                <div class="text-gold mb-4 d-flex gap-1">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="fst-italic text-muted mb-4" style="font-size: 1.05rem; line-height: 1.7">
-                  "The Physics and Chemistry lectures here are amazing! Dr. Sunita makes complex
-                  topics so easy to understand. Highly recommended for JEE preparation."
-                </p>
-                <div class="d-flex align-items-center gap-3">
-                  <div
-                    class="bg-navy text-gold p-2 rounded-circle fw-bold shadow-sm"
-                    style="
-                      width: 50px;
-                      height: 50px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      font-size: 1.2rem;
-                    "
-                  >
-                    A
-                  </div>
-                  <div>
-                    <h6 class="fw-bold text-navy mb-0">Ananya Deshpande</h6>
-                    <small class="text-maroon fw-bold opacity-75">Student (HSC '25)</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Testimonial 3 -->
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-              <div class="card border-0 shadow-sm rounded-4 h-100 p-4 premium-card">
-                <div class="text-gold mb-4 d-flex gap-1">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="fst-italic text-muted mb-4" style="font-size: 1.05rem; line-height: 1.7">
-                  "The regular tests and performance tracking have helped us identify our daughter's
-                  weak areas early on. A very professional and disciplined institute."
-                </p>
-                <div class="d-flex align-items-center gap-3">
-                  <div
-                    class="bg-navy text-gold p-2 rounded-circle fw-bold shadow-sm"
-                    style="
-                      width: 50px;
-                      height: 50px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      font-size: 1.2rem;
-                    "
-                  >
-                    R
-                  </div>
-                  <div>
-                    <h6 class="fw-bold text-navy mb-0">Rajesh Kulkarni</h6>
-                    <small class="text-maroon fw-bold opacity-75">Parent (Class 8th)</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+              </section>
 
-      <!-- Portal Section -->
-      <section class="py-5 bg-white border-top">
-        <div class="container container-custom">
-          <div class="portal-card" data-aos="zoom-in">
-            <h2 class="mb-4">Management Portal Access</h2>
-            <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
-              <a href="login.html" class="btn-gold-custom px-5 py-3 fw-bold rounded-pill">
-                Enter Student Portal
-              </a>
-              <a href="login.html" class="btn-white-custom px-5 py-3 fw-bold rounded-pill">
-                Parent Monitoring Panel
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+              <!-- Testimonials Section -->
+              <section class="py-5 bg-white">
+                  <div class="container">
+                      <div class="text-center mb-5">
+                          <h2 class="display-5 fw-bold text-navy section-title">Words from Our Community</h2>
+                          <p class="text-muted mt-3">Real stories from students and parents who achieved their goals with us.</p>
+                      </div>
+                      <div class="row g-4" id="testimonials-container">
+                          <div class="col-md-4">
+                              <div class="card border-0 shadow-sm rounded-4 h-100 p-5 premium-card">
+                                  <div class="d-flex align-items-center gap-3 mb-3">
+                                      <div class="bg-navy text-gold p-2 rounded-circle fw-bold shadow-sm" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">
+                                          S
+                                      </div>
+                                      <div>
+                                          <h6 class="fw-bold text-navy mb-0">Suresh Raman</h6>
+                                          <small class="text-maroon fw-bold opacity-75">Parent (SSC '24)</small>
+                                      </div>
+                                  </div>
+                                  <div class="text-gold mb-3 d-flex gap-1">
+                                      <i data-lucide="star" width="18" fill="currentColor"></i><i data-lucide="star" width="18" fill="currentColor"></i><i data-lucide="star" width="18" fill="currentColor"></i><i data-lucide="star" width="18" fill="currentColor"></i><i data-lucide="star" width="18" fill="currentColor"></i>
+                                  </div>
+                                  <div class="review-wrapper">
+                                      <p class="fst-italic text-muted mb-2 review-text" style="font-size: 1.05rem; line-height: 1.7">"Ambition Tutorials has transformed my son's approach to learning. The teachers are incredibly patient and the focus on concepts rather than just marks is what sets them apart."</p>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="col-md-4">
+                              <div class="card border-0 shadow-sm rounded-4 h-100 p-5 premium-card">
+                                  <div class="d-flex align-items-center gap-3 mb-3">
+                                      <div class="bg-navy text-gold p-2 rounded-circle fw-bold shadow-sm" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">
+                                          A
+                                      </div>
+                                      <div>
+                                          <h6 class="fw-bold text-navy mb-0">Ananya Deshpande</h6>
+                                          <small class="text-maroon fw-bold opacity-75">Student (HSC '25)</small>
+                                      </div>
+                                  </div>
+                                  <div class="text-gold mb-3 d-flex gap-1">
+                                      <i data-lucide="star" width="18" fill="currentColor"></i><i data-lucide="star" width="18" fill="currentColor"></i><i data-lucide="star" width="18" fill="currentColor"></i><i data-lucide="star" width="18" fill="currentColor"></i><i data-lucide="star" width="18" fill="currentColor"></i>
+                                  </div>
+                                  <div class="review-wrapper">
+                                      <p class="fst-italic text-muted mb-2 review-text" style="font-size: 1.05rem; line-height: 1.7">"The Physics and Chemistry lectures here are amazing! Dr. Sunita makes complex topics so easy to understand. Highly recommended for JEE preparation. The regular mock tests provided excellent practice."</p>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="col-md-4">
+                              <div class="card border-0 shadow-sm rounded-4 h-100 p-5 premium-card">
+                                  <div class="d-flex align-items-center gap-3 mb-3">
+                                      <div class="bg-navy text-gold p-2 rounded-circle fw-bold shadow-sm" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">
+                                          R
+                                      </div>
+                                      <div>
+                                          <h6 class="fw-bold text-navy mb-0">Rajesh Kulkarni</h6>
+                                          <small class="text-maroon fw-bold opacity-75">Parent (Class 8th)</small>
+                                      </div>
+                                  </div>
+                                  <div class="text-gold mb-3 d-flex gap-1">
+                                      <i data-lucide="star" width="18" fill="currentColor"></i><i data-lucide="star" width="18" fill="currentColor"></i><i data-lucide="star" width="18" fill="currentColor"></i><i data-lucide="star" width="18" fill="currentColor"></i><i data-lucide="star" width="18" fill="currentColor"></i>
+                                  </div>
+                                  <div class="review-wrapper">
+                                      <p class="fst-italic text-muted mb-2 review-text" style="font-size: 1.05rem; line-height: 1.7">"The regular tests and performance tracking have helped us identify our daughter's weak areas early on. A very professional and disciplined institute. We've seen a noticeable improvement in her overall grades and confidence."</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </section>
 
-      <!-- CTA Section -->
-      <section id="enquiry" class="py-5 bg-light overflow-hidden">
-        <div class="container container-custom">
-          <div
-            class="bg-navy p-5 rounded-5 shadow-lg text-center text-white position-relative overflow-hidden"
-            style="background: linear-gradient(45deg, #1a2b4c 0%, #253b6e 100%)"
-          >
-            <div class="position-relative z-2">
-              <h2 class="display-4 fw-bold mb-3">Ready to Join Us?</h2>
-              <p class="mb-5 fs-5 opacity-75">
-                Take the first step towards a bright academic future today. Batches filling fast!
-              </p>
-              <a href="enquiry.html" class="btn-premium btn-lg px-5 py-3 fs-5"
-                >Submit Enquiry Now</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+              <!-- Campus Gallery Section -->
+              <section id="gallery" class="py-5 bg-white">
+                  <div class="container">
+                      <div class="text-center justify-content-center align-items-center mb-5" data-aos="fade-up">
+                          <span class="badge bg-gold text-navy px-3 py-2 rounded-pill mb-3 fw-bold tracking-widest">INFRASTRUCTURE</span>
+                          <h2 class="fw-bold text-navy display-6 mb-3">Life at Ambition Tutorials</h2>
+                          <p class="text-muted lead max-w-lg mx-auto">Experience our state-of-the-art interactive classrooms and modern learning environments.</p>
+                      </div>
+                      
+                      <div class="row g-4 instagram-grid">
+                          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                              <div class="gallery-item premium-border">
+                                  <img src="assets/10th result.jpeg" alt="SSC 2025 Toppers">
+                                  <div class="gallery-overlay">
+                                      <i data-lucide="award" width="32"></i>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                              <div class="gallery-item premium-border">
+                                  <img src="assets/classroom_photo_welcome_1774183148422.png" alt="Institute Entrance">
+                                  <div class="gallery-overlay">
+                                      <i data-lucide="home" width="32"></i>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                              <div class="gallery-item premium-border">
+                                  <img src="assets/WhatsApp Image 2026-03-16 at 4.25.12 PM.jpeg" alt="HSC Results">
+                                  <div class="gallery-overlay">
+                                      <i data-lucide="graduation-cap" width="32"></i>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                              <div class="gallery-item premium-border">
+                                  <img src="assets/classroom_photo_students_performing_1774183186357.png" alt="Academic Environment">
+                                  <div class="gallery-overlay">
+                                      <i data-lucide="users" width="32"></i>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                              <div class="gallery-item premium-border">
+                                  <img src="assets/12th result.jpeg" alt="Results Excellence">
+                                  <div class="gallery-overlay">
+                                      <i data-lucide="award" width="32"></i>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                              <div class="gallery-item premium-border">
+                                  <img src="assets/classroom_photo_teacher_board_1774183305966.png" alt="Expert Faculty">
+                                  <div class="gallery-overlay">
+                                      <i data-lucide="book-open" width="32"></i>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </section>
 
-    <div id="footer-placeholder"></div>
+              <!-- CTA Section -->
+              <section id="enquiry" class="py-5 bg-light overflow-hidden">
+                  <div class="container bg-navy p-5 p-md-5 rounded-5 shadow-lg text-center text-white position-relative" style="background: linear-gradient(45deg, #1a2b4c 0%, #253b6e 100%)">
+                      <div class="position-absolute top-0 start-0 w-100 h-100 opacity-10" style="background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png')"></div>
+                      <div class="position-relative z-2">
+                          <h2 class="display-4 fw-bold mb-3">Ready to Join Us?</h2>
+                          <p class="mb-5 fs-5 opacity-75">Take the first step towards a bright academic future today. Batches filling fast!</p>
+                          <a href="enquiry.html" class="btn btn-premium btn-lg px-5 py-3 fs-5">Submit Enquiry Now</a>
+                      </div>
+                  </div>
+              </section>
+          </div>
+        </main>
+        
+        <div id="footer-placeholder"></div>
+    </div>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/nav-footer.js"></script>
-    <script>
-      AOS.init({
-        duration: 1000,
-        once: true,
-      });
-    </script>
+    <script src="js/main.js"></script>
   </body>
 </html>

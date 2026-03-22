@@ -1,75 +1,89 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const isLogin = window.location.pathname.includes('login.html');
+    const isDashboard = window.location.pathname.includes('dashboard.html');
+    
+    // Auth logic simplified
+    // Standard template
     const header = `
-    <nav class="navbar navbar-expand-lg fixed-top glass-nav" id="mainNav">
-        <div class="container container-custom">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                <img src="assets/ambition_logo.png" alt="Ambition Tutorials" height="50">
-                <span class="text-white fw-bold d-none d-sm-inline">Ambition Tutorials</span>
+    <nav class="navbar navbar-expand-lg glass-nav py-3 sticky-top shadow-sm navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/logo.png" alt="Ambition logo" width="50" height="50" class="me-3 rounded-circle" style="object-fit: cover;" onerror="this.src='assets/ambition_logo.png'"/>
+                <div class="d-flex flex-column text-white">
+                    <span class="fw-bold tracking-wider fs-4 line-height-1">AMBITION</span>
+                    <small class="text-gold fw-semibold tracking-widest fs-7" style="margin-top: -2px;">TUTORIALS</small>
+                </div>
             </a>
-            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#basic-navbar-nav" aria-controls="basic-navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="basic-navbar-nav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
-                    <li class="nav-item"><a class="nav-link" href="faculty.html">Faculty</a></li>
-                    <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
-                    <li class="nav-item"><a class="nav-link" href="enquiry.html">Enquiry</a></li>
-                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                        <a class="btn-gold-custom py-2 px-4 shadow-sm" href="registration.html">Enroll Now</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="faculty.html">Faculty</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="results.html">Results</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="enquiry.html">Enquiry</a></li>
+                    <li class="nav-item"><a href="enquiry.html" class="btn btn-gold-custom ms-lg-3 text-nowrap">Enroll Now</a></li>
                 </ul>
             </div>
         </div>
     </nav>`;
 
     const footer = `
-    <footer class="footer bg-navy text-white pt-5 pb-3">
-        <div class="container container-custom">
-            <div class="row g-4 mb-4">
-                <div class="col-lg-4 pe-lg-4">
-                    <a class="navbar-brand d-flex align-items-center gap-2 text-white mb-3" href="index.html">
-                        <img src="assets/ambition_logo.png" alt="Ambition Tutorials" height="70" class="bg-white rounded p-1">
-                        <span class="fw-bold">Ambition Tutorials</span>
-                    </a>
-                    <p class="opacity-75">Ambition Tutorials has been a beacon of academic success in Pune for over a decade. We specialize in School, Science, and Commerce streams.</p>
-                    <div class="social-links d-flex gap-2 mt-3">
-                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="fab fa-youtube"></i></a>
+    <footer class="bg-navy pt-5 pb-3 mt-auto">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <img src="assets/logo.png" alt="Logo" width="45" height="45" class="rounded-circle" style="object-fit: cover;" onerror="this.src='assets/ambition_logo.png'" />
+                        <h5 class="text-gold fw-bold mb-0">AMBITION TUTORIALS</h5>
+                    </div>
+                    <p class="text-white-50">
+                        We help you achieve your academic dreams through quality education and expert guidance in School and Commerce streams.
+                    </p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-white hover-gold"><i data-lucide="facebook" width="20"></i></a>
+                        <a href="#" class="text-white hover-gold"><i data-lucide="instagram" width="20"></i></a>
+                        <a href="#" class="text-white hover-gold"><i data-lucide="twitter" width="20"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4">
-                    <h5 class="text-gold mb-3">Quick Links</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="faculty.html">Faculty</a></li>
-                        <li><a href="results.html">Results</a></li>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-gold fw-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none hover-white">Home</a></li>
+                        <li><a href="courses.html" class="text-white-50 text-decoration-none hover-white">Courses</a></li>
+                        <li><a href="faculty.html" class="text-white-50 text-decoration-none hover-white">Faculty</a></li>
+                        <li><a href="results.html" class="text-white-50 text-decoration-none hover-white">Results</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-4">
-                    <h5 class="text-gold mb-3">Programs</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li><a href="courses.html">Class 5th - 10th</a></li>
-                        <li><a href="courses.html">Science (11th-12th)</a></li>
-                        <li><a href="courses.html">Commerce</a></li>
-                        <li><a href="courses.html">Competitive Prep</a></li>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-gold fw-bold mb-4">Courses</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li>Class 5th – 8th</li>
+                        <li>Class 9th – 10th</li>
+                        <li>CET Preparation</li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-4">
-                    <h5 class="text-gold mb-3">Contact Us</h5>
-                    <ul class="list-unstyled opacity-75">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-gold"></i> Pune, Maharashtra, India</li>
-                        <li class="mb-2"><i class="fas fa-phone-alt me-2 text-gold"></i> +91 98765 43210</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2 text-gold"></i> info@ambitiontutorials.com</li>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-gold fw-bold mb-4">Contact Us</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="mb-2 d-flex align-items-center gap-2">
+                            <i data-lucide="phone" width="18" class="text-gold"></i> +91 98765 43210
+                        </li>
+                        <li class="mb-2 d-flex align-items-center gap-2">
+                            <i data-lucide="mail" width="18" class="text-gold"></i> info@ambition.com
+                        </li>
+                        <li class="mb-2 d-flex align-items-center gap-2">
+                            <i data-lucide="map-pin" width="18" class="text-gold"></i> Pune, Maharashtra
+                        </li>
                     </ul>
                 </div>
             </div>
-            <hr class="border-secondary">
-            <div class="text-center opacity-50 mt-4">
-                <p class="mb-0">&copy; 2026 Ambition Tutorials. All rights reserved.</p>
+            <hr class="bg-white opacity-25" />
+            <div class="text-center text-white-50 small">
+                &copy; ${new Date().getFullYear()} Ambition Tutorials. All rights reserved.
             </div>
         </div>
     </footer>`;
@@ -89,4 +103,9 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active');
         }
     });
+
+    // Initialize Lucide icons if available
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 });

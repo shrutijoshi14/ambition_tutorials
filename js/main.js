@@ -21,15 +21,44 @@ document.addEventListener('DOMContentLoaded', () => {
         const handleScroll = () => {
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
+                navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.35)';
             } else {
                 navbar.classList.remove('scrolled');
+                navbar.style.boxShadow = '';
             }
         };
-
-        window.addEventListener('scroll', handleScroll);
-        // Call once on load in case user is already scrolled
+        window.addEventListener('scroll', handleScroll, { passive: true });
         handleScroll();
     }
+
+    // Hero image floating animation
+    const heroImg = document.querySelector('.hero-section img');
+    if (heroImg) {
+        heroImg.style.transition = 'transform 0.1s ease-out';
+        let floatY = 0, floatDir = 1;
+        setInterval(() => {
+            floatY += 0.08 * floatDir;
+            if (Math.abs(floatY) >= 10) floatDir *= -1;
+            heroImg.style.transform = `translateY(${floatY}px)`;
+        }, 16);
+    }
+
+    // 3D tilt on premium cards
+    document.querySelectorAll('.premium-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            const tiltX = (y / rect.height) * 6;
+            const tiltY = -(x / rect.width) * 6;
+            card.style.transform = `translateY(-10px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+            card.style.transition = 'transform 0.1s ease';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+            card.style.transition = 'all 0.35s cubic-bezier(0.4,0,0.2,1)';
+        });
+    });
 
     // 4. Number Counters Animation
     const counters = document.querySelectorAll('.counter');
